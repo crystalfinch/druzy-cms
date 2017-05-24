@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title><%= title%></title>
+	<link rel="stylesheet" type="text/css" href="/lib/semantic/dist/semantic.min.css">
+</head>
+<body class="menu-open">
+
+	<section ng-view></section>
+
+	<script type="text/javascript">
+		window.user = <%- user || 'null' %>;
+	</script>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/lib/semantic/dist/semantic.min.js"></script>
+
+	<script type="text/javascript" src="/lib/angular/angular.js"></script>
+	<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+
+	<!-- posts -->
+	<script type="text/javascript" src="/posts/posts.client.module.js"></script>
+	<script type="text/javascript" src="/posts/controllers/posts.client.controller.js"></script>
+	<script type="text/javascript" src="/posts/services/posts.client.service.js"></script>
+	<script type="text/javascript" src="/posts/config/posts.client.routes.js"></script>
+	<script type="text/javascript" src="/posts/directives/recentPosts/recentPosts.directive.js"></script>
+
+	<!-- blog -->
+	<script type="text/javascript" src="/blog/blog.client.module.js"></script>
+	<script type="text/javascript" src="/blog/config/blog.client.routes.js"></script>
+
+	<!-- dashboard -->
+	<script type="text/javascript" src="/dashboard/dashboard.client.module.js"></script>
+	<script type="text/javascript" src="/dashboard/controllers/dashboard.client.controller.js"></script>
+	<script type="text/javascript" src="/dashboard/config/dashboard.client.routes.js"></script>
+
+	<!-- users -->
+	<script type="text/javascript" src="/user/users.client.module.js"></script>
+	<script type="text/javascript" src="/user/services/authentication.client.service.js"></script>
+
+	<!-- app -->
+	<script type="text/javascript" src="/application.js"></script>
+
+	<!-- common -->
+	<script type="text/javascript" src="/common/directives/navigation/navigation.directive.js"></script>
+	<script type="text/javascript" src="/common/directives/menuBar/menuBar.directive.js"></script>
+	<script type="text/javascript" src="/common/directives/footerGeneric/footerGeneric.directive.js"></script>
+</body>
+</html>

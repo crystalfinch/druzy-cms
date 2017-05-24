@@ -1,0 +1,47 @@
+<section ng-controller="DashboardController">
+	<div data-ng-show="!authentication.user">
+		<a href="/signup">Sign Up</a><br />
+		<a href="/signin">Sign In</a><br />
+	</div>
+	<div data-ng-show="authentication.user">
+
+		<navigation></navigation>
+
+		<div class="main">
+
+			<menu-bar></menu-bar>
+
+			<div class="page-title">
+				<h1 class="ui header">Dashboard
+					<div class="sub header">Welcome, <span data-ng-bind="authentication.user.fullName"></span>!</div>
+				</h1>
+			</div>
+
+			<div class="inside">
+				<div class="ui stackable grid row">
+					<div class="sixteen wide tablet nine wide computer column">
+
+						<recent-posts></recent-posts>
+
+						<div class="ui segment">
+							<h2 class="ui header">Recent Pages</h2>
+						</div>
+
+					</div>
+					<div class="sixteen wide tablet six wide computer column">
+
+						<div class="ui segment">
+							<h2 class="ui header">Recent Files</h2>
+						</div>
+
+					</div>
+				</div>
+
+				<footer-generic></footer-generic>
+
+			</div>
+		</div>
+
+
+	</div>
+</section>

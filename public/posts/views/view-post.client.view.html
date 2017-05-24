@@ -1,0 +1,57 @@
+<section data-ng-controller="PostsController" data-ng-init="findOne()">
+
+	<div class="ui container">
+		<div class="ui stackable grid row">
+			<div class="sixteen wide computer column">
+
+				<h1 class="ui header">{Blog Name}
+					<div class="sub header">{Blog tagline vero cumque a sapiente delectus}</div>
+				</h1>
+				<div class="ui menu">
+					<a class="item">Home</a>
+					<a class="item">About</a>
+					<a class="item">Contact</a>
+				</div>
+
+			</div>
+		</div>
+		<div class="ui stackable grid row">
+			<div class="ten wide tablet eleven wide computer column">
+
+				<h2 class="ui header">
+					<span data-ng-bind="post.title"></span>
+					<div class="sub header">
+						<span data-ng-bind="post.created | date:'mediumDate'"></span> &bull;
+						<span data-ng-bind="post.creator.fullName"></span></div>
+				</h2>
+
+				<div data-ng-show="authentication.user._id == post.creator._id">
+					<a href="/#!/posts/{{post._id}}/edit">Edit</a>
+					<a data-ng-click="delete();">Delete</a>
+				</div>
+
+				<article>
+					<div data-ng-bind="post.content"></div>
+				</article>
+
+			</div>
+			<div class="six wide tablet five wide computer column">
+
+				<p>{Blog Description} Impedit officia laudantium similique iure magnam deleniti, vero cumque a sapiente delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda magnam vel illo eos voluptate, aspernatur aliquam odio id.</p>
+
+				<h3 class="ui header">Recent Posts</h3>
+				<div class="ui relaxed divided list">
+					<a href="" class="item">Aspernatur aliquam odio</a>
+					<a href="" class="item">Assumenda magnam vel illo eos voluptate</a>
+					<a href="" class="item">Sapiente delectus</a>
+				</div>
+
+			</div>
+		</div>
+
+		<footer>
+			<div class="ui divider"></div>
+			<p>&copy; 2017 {Blog Title}</p>
+		</footer>
+	</div>
+</section>

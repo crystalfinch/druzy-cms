@@ -1,0 +1,12 @@
+# dependencies
+node_modules/
+public/lib/
+
+# dotenv environment variables file
+.env
+
+# database
+data/
+
+# misc
+.DS_Store

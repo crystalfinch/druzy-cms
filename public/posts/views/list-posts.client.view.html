@@ -1,0 +1,67 @@
+<section data-ng-controller="PostsController" data-ng-init="find()">
+
+	<navigation></navigation>
+
+	<div class="main">
+
+		<menu-bar></menu-bar>
+
+		<div class="page-title">
+			<div class="ui grid">
+				<div class="seven wide column">
+					<h1 class="ui header">Posts</h1>
+				</div>
+				<div class="nine wide column right aligned">
+					<a href="/#!/posts/create" class="ui primary button">
+						<i class="plus icon"></i>New Post
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="inside">
+			<div class="ui stackable grid row">
+				<div class="sixteen wide column">
+
+					<table class="ui striped padded table">
+						<thead class="tablet-up">
+							<tr>
+								<th>Title</th>
+								<th class="three wide center aligned">Author</th>
+								<th class="four wide center aligned">Date</th>
+								<th class="three wide right aligned"><!--Actions--></th>
+							</tr>
+						</thead>
+						<tbody>
+
+							<tr data-ng-repeat="post in posts">
+								<td>
+									<a data-ng-href="#!/posts/{{post._id}}" data-ng-bind="post.title"></a>
+								</td>
+								<td data-labeled="Posted by" class="center aligned">
+									<span data-ng-bind="post.creator.fullName"></span>
+								</td>
+								<td data-labeled="Date:" class="center aligned">
+									<span data-ng-bind="post.created | date:'medium'"></span>
+								</td>
+								<td class="right aligned actions">
+									<a data-ng-href="#!/posts/{{post._id}}" title="View"><i class="eye icon"></i></a>
+									<a href="/#!/posts/{{post._id}}/edit" title="Edit"><i class="write icon"></i></a>
+									<a data-ng-click="delete();" title="Delete"><i class="trash icon"></i></a>
+								</td>
+							</tr>
+
+						</tbody>
+					</table>
+
+				</div>
+			</div>
+
+			<footer-generic></footer-generic>
+		</div>
+	</div>
+
+	<div data-ng-hide="!posts || posts.length">
+		No posts yet! Why don't you <a href="/#!/posts/create">create one</a>?
+	</div>
+</section>

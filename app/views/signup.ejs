@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title><%=title %></title>
+	<link rel="stylesheet" type="text/css" href="/lib/semantic/dist/semantic.min.css">
+</head>
+<body>
+
+	<div class="ui container centered-vertically">
+
+		<div class="ui two column centered stackable grid">
+			<div class="eight wide tablet six wide computer five wide large screen column">
+
+				<div class="ui segment centered">
+					<h2 class="ui center aligned header">Sign Up</h2>
+
+					<div class="ui fluid two item mini menu">
+						<a class="item active" data-tab="emailSignUp">Email</a>
+						<a class="item facebook" data-tab="facebookSignUp"><i class="facebook icon"></i>Facebook</a>
+					</div>
+
+					<div class="ui active tab" data-tab="emailSignUp">
+						<form action="/signup" method="post" class="ui form">
+
+							<div class="required field">
+								<label for="firstName">First Name</label>
+								<input type="text" name="firstName">
+							</div>
+							<div class="required field">
+								<label for="lastName">Last Name</label>
+								<input type="text" name="lastName">
+							</div>
+							<div class="required field">
+								<label for="email">Email</label>
+								<input type="email" name="email">
+								<!--<div class="ui pointing red basic label">
+								 	Email is required
+								</div>-->
+							</div>
+							<div class="required field">
+								<label for="username">Userame</label>
+								<input type="text" name="username">
+							</div>
+							<div class="required field">
+								<label for="password">Password</label>
+								<input type="password" name="password">
+								<!--<div class="ui pointing red basic label">
+								 	Password is required
+								</div>-->
+							</div>
+
+							<% for(var i in messages) {%>
+								<div class="ui error mini message" style="display:block">
+									<div class="header"><i class="warning sign icon"></i>Error</div>
+									<p><%= messages[i] %></p>
+								</div>
+							<% } %>
+							<!--
+							<div class="ui success mini message" style="display:block">
+								<div class="header"><i class="check icon"></i>Strong Password</div>
+							</div>
+							<div class="ui warning mini message" style="display:block">
+								<div class="header"><i class="warning icon"></i>Weak Password</div>
+								<p>Try adding a mixture of uppercase letters, lowercase letters, numbers and special characters.</p>
+							</div>
+							<div class="ui error mini message" style="display:block">
+								<div class="header"><i class="warning sign icon"></i>Password Too Short</div>
+								<p>Must be at least 6 characters long.</p>
+							</div>
+							<div class="ui error mini message" style="display:block">
+								<div class="header"><i class="warning sign icon"></i>Account Exists</div>
+								<p>The email you are signing up with is associated with an existing account. Please <a href="/sign-in">sign in</a>.</p>
+							</div>
+							<div class="ui error mini message" style="display:block">
+								<div class="header"><i class="warning sign icon"></i>Invalid Email</div>
+								<p>Please enter a valid email address.</p>
+							</div>
+							-->
+
+							<input class="ui primary button" type="submit" value="Sign Up">
+						</form>
+					</div>
+
+					<div class="ui tab" data-tab="facebookSignUp">
+						<form action="/oauth/facebook" method="post" class="ui form">
+							<div class="required field">
+								<label for="emailFacebookSignUp">Email or Phone</label>
+								<input type="email" name="emailFacebookSignUp">
+							</div>
+							<div class="required field">
+								<label for="passwordFacebookSignUp">Password</label>
+								<input type="text" name="passwordFacebookSignUp">
+							</div>
+							<input class="ui primary button" type="submit" value="Sign Up via Facebook">
+						</form>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/lib/semantic/dist/semantic.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			// Semantic UI inits
+			$('.menu .item').tab();
+		});
+	</script>
+</body>
+</html>

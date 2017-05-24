@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title><%=title %></title>
+	<link rel="stylesheet" type="text/css" href="/lib/semantic/dist/semantic.min.css">
+</head>
+<body>
+
+	<!-- <a href="/oauth/facebook">Sign in with Facebook</a><br /> -->
+
+	<div class="ui container centered-vertically">
+		<div class="ui two column centered grid">
+			<div class="sixteen wide phone eight wide tablet column">
+
+				<div class="ui segment centered">
+					<h1 class="ui huge center aligned header">Sign In</h1>
+					<form action="/signin" method="post" class="ui form">
+						<div class="required field">
+							<label for="username">Username</label>
+							<input type="text" name="username" value="crystalfinch">
+						</div>
+						<div class="required field">
+							<label for="password">Password</label>
+							<input type="password" name="password" value="h3ll0!!">
+						</div>
+						<button class="ui primary button" type="submit">Sign In</button>
+
+						<% for(var i in messages) {%>
+							<!-- <div class="flash"><%= messages[i] %></div> -->
+							<div class="flash ui error mini message" style="display:block">
+								<div class="header"><i class="warning sign icon"></i>Error</div>
+								<p><%= messages[i] %></p>
+								<!-- <p>This email is not associated with an existing account. Please <a href="/sign-up">sign up</a> first.</p> -->
+							</div>
+						<% } %>
+					</form>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
