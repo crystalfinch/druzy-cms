@@ -56,7 +56,7 @@
 									<span data-ng-bind="post.creator.fullName"></span>
 								</td>
 								<td data-labeled="Date:" class="center aligned">
-									<span data-ng-bind="post.created | date:'medium'"></span>
+									<span data-ng-bind="post.created | date:'MMM d, yyyy h:mma'"></span>
 								</td>
 								<td class="right aligned actions">
 									<a data-ng-href="#!/posts/{{post._id}}" title="View"><i class="eye icon"></i></a>
