@@ -47,14 +47,14 @@
 						</tbody>
 					</table>
 
+					<div ng-if="!posts || !posts.length" class="ui small info message">
+						No posts yet! Why don't you <a href="/#!/posts/create">create one</a>?
+					</div>
+
 				</div>
 			</div>
 
 			<footer-generic></footer-generic>
 		</div>
-	</div>
-
-	<div data-ng-hide="!posts || posts.length">
-		No posts yet! Why don't you <a href="/#!/posts/create">create one</a>?
 	</div>
 </section>
