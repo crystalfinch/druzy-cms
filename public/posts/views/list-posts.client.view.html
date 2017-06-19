@@ -19,15 +19,36 @@
 					<table class="ui striped padded table">
 						<thead class="tablet-up">
 							<tr>
-								<th>Title</th>
-								<th class="three wide center aligned">Author</th>
-								<th class="four wide center aligned">Date</th>
+								<th>
+									Title
+									<span ng-click="sortBy('post.title')">
+										<i ng-show="propertyName !== 'post.title'" class="sort disabled icon"></i>
+										<i ng-show="reverse === true && propertyName === 'post.title'" class="arrow up icon"></i>
+										<i ng-show="reverse === false && propertyName === 'post.title'" class="arrow down icon"></i>
+									</span>
+								</th>
+								<th class="three wide center aligned">
+									Author
+									<span ng-click="sortBy('post.creator.fullName')">
+										<i ng-show="propertyName !== 'post.creator.fullName'" class="sort disabled icon"></i>
+										<i ng-show="reverse === true && propertyName === 'post.creator.fullName'" class="arrow up icon"></i>
+										<i ng-show="reverse === false && propertyName === 'post.creator.fullName'" class="arrow down icon"></i>
+									</span>
+								</th>
+								<th class="four wide center aligned">
+									Date
+									<span ng-click="sortBy('post.created')">
+										<i ng-show="propertyName !== 'post.created'" class="sort disabled icon"></i>
+										<i ng-show="reverse === true && propertyName === 'post.created'" class="arrow up icon"></i>
+										<i ng-show="reverse === false && propertyName === 'post.created'" class="arrow down icon"></i>
+									</span>
+								</th>
 								<th class="three wide right aligned"><!--Actions--></th>
 							</tr>
 						</thead>
 						<tbody>
 
-							<tr data-ng-repeat="post in posts">
+							<tr data-ng-repeat="post in posts | orderBy:propertyName:reverse">
 								<td>
 									<a data-ng-href="#!/posts/{{post._id}}" data-ng-bind="post.title"></a>
 								</td>
