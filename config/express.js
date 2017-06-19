@@ -32,6 +32,9 @@ module.exports = function() {
 		secret: config.sessionSecret
 	}));
 
+	// Pretty JSON
+	app.set('json spaces', 2);
+
 	// Views Setup
 	app.set('views', './app/views');
 	app.set('view engine', 'ejs');
