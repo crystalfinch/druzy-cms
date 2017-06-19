@@ -51,7 +51,7 @@ angular.module('posts').controller('PostsController', ['$scope', '$routeParams',
 	};
 
 	// Table sorting
-	$scope.propertyName = 'post.title';
+	$scope.propertyName = 'title';
 	$scope.reverse = false;
 	$scope.sortBy = function(propertyName) {
 		$scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;

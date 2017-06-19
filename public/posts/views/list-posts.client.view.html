@@ -21,26 +21,26 @@
 							<tr>
 								<th>
 									Title
-									<span ng-click="sortBy('post.title')">
-										<i ng-show="propertyName !== 'post.title'" class="sort disabled icon"></i>
-										<i ng-show="reverse === true && propertyName === 'post.title'" class="arrow up icon"></i>
-										<i ng-show="reverse === false && propertyName === 'post.title'" class="arrow down icon"></i>
+									<span ng-click="sortBy('title')">
+										<i ng-show="propertyName !== 'title'" class="sort disabled icon"></i>
+										<i ng-show="reverse === true && propertyName === 'title'" class="arrow up icon"></i>
+										<i ng-show="reverse === false && propertyName === 'title'" class="arrow down icon"></i>
 									</span>
 								</th>
 								<th class="three wide center aligned">
 									Author
-									<span ng-click="sortBy('post.creator.fullName')">
-										<i ng-show="propertyName !== 'post.creator.fullName'" class="sort disabled icon"></i>
-										<i ng-show="reverse === true && propertyName === 'post.creator.fullName'" class="arrow up icon"></i>
-										<i ng-show="reverse === false && propertyName === 'post.creator.fullName'" class="arrow down icon"></i>
+									<span ng-click="sortBy('creator.fullName')">
+										<i ng-show="propertyName !== 'creator.fullName'" class="sort disabled icon"></i>
+										<i ng-show="reverse === true && propertyName === 'creator.fullName'" class="arrow up icon"></i>
+										<i ng-show="reverse === false && propertyName === 'creator.fullName'" class="arrow down icon"></i>
 									</span>
 								</th>
 								<th class="four wide center aligned">
 									Date
-									<span ng-click="sortBy('post.created')">
-										<i ng-show="propertyName !== 'post.created'" class="sort disabled icon"></i>
-										<i ng-show="reverse === true && propertyName === 'post.created'" class="arrow up icon"></i>
-										<i ng-show="reverse === false && propertyName === 'post.created'" class="arrow down icon"></i>
+									<span ng-click="sortBy('created')">
+										<i ng-show="propertyName !== 'created'" class="sort disabled icon"></i>
+										<i ng-show="reverse === true && propertyName === 'created'" class="arrow up icon"></i>
+										<i ng-show="reverse === false && propertyName === 'created'" class="arrow down icon"></i>
 									</span>
 								</th>
 								<th class="three wide right aligned"><!--Actions--></th>
