@@ -1,0 +1,14 @@
+<div class="page-title">
+	<div class="ui grid">
+		<div class="seven wide column">
+			<h1 class="ui header">
+				{{headingText}}
+				<div class="sub header" ng-if="subHeadingText">
+					{{subHeadingText}}
+				</div>
+			</h1>
+		</div>
+		<div class="nine wide column right aligned" ng-if="hasButton" ng-transclude>
+		</div>
+	</div>
+</div>
