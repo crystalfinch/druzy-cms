@@ -2,7 +2,7 @@
 	<h2 class="ui header">Recent Posts</h2>
 	<div class="ui very relaxed divided list">
 
-		<div data-ng-repeat="post in posts" class="item">
+		<div data-ng-repeat="post in posts | limitTo:3" class="item">
 			<div class="content">
 				<a class="header" data-ng-href="/#!/posts/{{post._id}}/edit" data-ng-bind="post.title"></a>
 				<div class="description">
