@@ -49,6 +49,7 @@ module.exports = function() {
 	// Routes
 	require('../app/routes/index.server.routes.js')(app); // passing in the Express instance
 	require('../app/routes/users.server.routes.js')(app); // passing in the Express instance
+	require('../app/routes/settings.server.routes.js')(app); // passing in the Express instance
 	require('../app/routes/posts.server.routes.js')(app); // passing in the Express instance
 
 	// Static Assets

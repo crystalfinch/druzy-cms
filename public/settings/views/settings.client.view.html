@@ -1,0 +1,40 @@
+<section data-ng-controller="SettingsController" data-ng-init="find()">
+
+	<navigation></navigation>
+
+	<div class="main">
+
+		<menu-bar></menu-bar>
+
+		<page-title headingText="Settings"></page-title>
+
+		<div class="inside">
+			<div class="ui stackable grid row">
+				<div class="fifteen wide tablet fourteen wide computer column">
+					<div class="ui segment">
+
+						<form class="ui form" novalidate><!-- data-ng-submit="update()" -->
+							<div ng-repeat="setting in settings">
+								<!-- if text -->
+								<div class="ten wide tablet eight wide computer field" ng-if="setting.input === 'text'">
+									<label for="{{setting.name}}">{{setting.label}}</label>
+									<input type="text" name="{{setting.name}}" value="{{setting.value}}">
+								</div>
+								<!-- textarea -->
+								<div class="field" ng-if="setting.input === 'textarea'">
+									<label for="{{setting.name}}">{{setting.label}}</label>
+									<textarea name="{{setting.name}}">{{setting.value}}</textarea>
+								</div>
+							</div>
+							<button class="ui primary button">Save Changes</button>
+							<button class="ui button">Cancel</button>
+						</form>
+
+					</div>
+				</div>
+			</div>
+
+			<footer-generic></footer-generic>
+		</div>
+	</div>
+</section>

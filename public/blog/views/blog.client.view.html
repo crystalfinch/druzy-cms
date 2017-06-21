@@ -1,9 +1,10 @@
-<div class="ui container">
+<div class="ui container" data-ng-controller="SettingsController" data-ng-init="find()">
+	<div class="ui hidden divider"></div>
 	<div class="ui stackable grid row">
 		<div class="sixteen wide computer column">
 
-			<h1 class="ui header">{Blog Name}
-				<div class="sub header">{Blog tagline vero cumque a sapiente delectus}</div>
+			<h1 class="ui header">{{settings[0].value}}
+				<div class="sub header">{{settings[1].value}}</div>
 			</h1>
 			<div class="ui menu">
 				<a class="item">Home</a>
@@ -37,7 +38,11 @@
 		</div>
 		<div class="six wide tablet five wide computer column">
 
-			<p>{Blog Description} Impedit officia laudantium similique iure magnam deleniti, vero cumque a sapiente delectus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda magnam vel illo eos voluptate, aspernatur aliquam odio id.</p>
+			<div>
+				{{settings[2].value}}
+			</div>
+
+			<div class="ui hidden divider"></div>
 
 			<h3 class="ui header">Recent Posts</h3>
 			<div class="ui relaxed divided list">
@@ -51,6 +56,6 @@
 
 	<footer>
 		<div class="ui divider"></div>
-		<p>&copy; 2017 {Blog Title}</p>
+		<p>&copy; 2017 {{settings[0].value}}</p>
 	</footer>
 </div>
